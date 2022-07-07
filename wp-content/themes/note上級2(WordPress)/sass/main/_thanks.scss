@@ -1,0 +1,41 @@
+.thanks{
+  padding: 8em 0 0;
+  &__wrapper{
+    width: 30%;
+    margin: 0 auto;
+  }
+  %thanksText{
+    font-size: 1.6rem;
+    line-height: calc(27/16);
+    color: $navy;
+  }
+  &__text p{
+    @extend %thanksText;
+    text-align: center;
+    margin-bottom: 5em;
+  }
+  &__homeLink{
+    @extend %thanksText;
+    text-decoration: underline $navy;
+    display: block;
+    text-align: center;
+    margin-bottom: 4.75em;
+  }
+}
+
+/*----------------------------------------
+      タブレット向け
+----------------------------------------*/
+@media (max-width: 1024px) {
+  .thanks__wrapper {
+    width: 90%;
+  }
+}
+/*----------------------------------------
+スマホ向け
+----------------------------------------*/
+@media (max-width: 600px) {
+  .thanks__breadCranp{
+    margin-top: 6em;
+  }
+}

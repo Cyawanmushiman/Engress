@@ -1,0 +1,64 @@
+// lineHeightCrop（line-heightの不要な余白を打ち消す）のmixinのコード例。
+// variables.scssという共通の変数定義用のscssファイルに記述して一元管理化しています。
+@mixin lineHeightCrop($line-height) {
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: calc((1 - #{$line-height}) * .5em);
+    content: "";
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: calc((1 - #{$line-height}) * .5em);
+    content: "";
+  }
+}
+
+@mixin priceDatasTitle($title, $padding: 1em){
+  @extend %priceDatas__content;
+  position: relative;
+  &::before{
+    content: $title;
+    font-size: 16px;
+    color: white;
+    padding: $padding;
+    background-color: $navy;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@mixin checkIcon($top: 32%, $left:3%){
+  &::before{
+    content: '';
+    display: inline-block;
+    background: url(../img/png/checkIcon.png);
+    position: absolute;
+    top: $top;
+    left: $left;
+    width: 17px;
+    height: 11px;
+  }
+}
+@mixin blockquote($top:20%, $left:5%, $padding: 1.5em 2em 3.4em 4.6em){
+  background-color: $snowwhite;
+  padding: $padding;
+  position: relative;
+  &::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; /*solidなら900、Brandsなら400*/
+    content: "\f10d";
+    color: $gray;
+    display: inline-block;
+    position: absolute;
+    top: $top;
+    left: $left;
+    font-size: 2.5rem;
+  }
+}

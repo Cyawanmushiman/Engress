@@ -1,0 +1,238 @@
+.contactMV{
+  background: url(../img/jpeg/cta@2x.jpg) center/cover;
+  position: relative;
+  padding: 11.1em 0;
+  &__title{
+    font-size: 3.2rem;
+    line-height: calc(54/32);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+/*----------------------------------------
+      contact
+----------------------------------------*/
+.contact{
+  padding: 5.3em 0 8.2em 0;
+  &__wrapper{
+    width: 54.7%;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  %contactTexts{
+    font-size: 1.6rem;
+    line-height: calc(27/16);
+    color: $navy;
+  }
+  &__text p{
+    @extend %contactTexts;
+  }
+  &__text>p{
+    margin-bottom: 2.6em;
+  }
+  .input{
+    margin-bottom: 0.9em;
+    &--tel{
+      margin-bottom: 1.2em;
+    }
+  }
+  &__inputLabel{
+    @extend %contactTexts;
+    margin-bottom: 0.4em;
+  }
+  &__radioText{
+    @extend %contactTexts;
+    margin-bottom: 0.62em;
+  }
+  .mwform-radio-field label {
+    width: 100%;
+    margin-bottom: 0.08em;
+  }
+  &__radioBtn{
+    display: inline-block;
+    width: 2%;
+    vertical-align: text-bottom;
+    transform: scale(1.5);
+    margin-left: 0.2em;
+  }
+  .mwform-radio-field input {
+    margin-right: 1.1em;
+  }
+  .mwform-radio-field:last-of-type{
+    margin-bottom: 0.42em;
+  }
+  &__kindsLabel{
+    @extend %contactTexts;
+    margin-bottom: 0.41em;
+    padding-left: 1.2em;
+  }
+  &__textareaLabel{
+    @extend %contactTexts;
+    margin-bottom: 0.4em;
+    margin-top: 0.47em;
+  }
+  &__pribacy{
+    @extend %contactTexts;
+    margin-bottom: 1.3em;
+    text-align: center;
+    padding-left: 3.4em;
+  }
+  /////////////////checkbox カスタマイズ↓
+  .mwform-checkbox-field.vertical-item{
+    text-align: center;
+  }
+  // &__checkbox{
+  //   display: none;
+  // }
+  .checkbox{
+    display: none;
+  }
+  // &__checkboxLabel{
+  //   @extend %contactTexts;
+  //   display: block;
+  //   text-align: center;
+  //   padding-left: 5.35em;
+  //   position:relative;
+  //   cursor:pointer;
+  //   width: 50%;
+  //   margin: 0 auto 2.7em;
+  .mwform-checkbox-field-text{
+    @extend %contactTexts;
+    display: block;
+    text-align: center;
+    padding-left: 5.35em;
+    position:relative;
+    cursor:pointer;
+    width: 100%;
+    margin: 0 auto 2.7em;
+    &::before,&::after{
+      position:absolute;
+      content:"";
+      top:15%;
+    }
+    &::before{
+      width:20px; /* チェックボックスの幅 */
+      height:20px; /* チェックボックスの高さ */
+      left:3.2em; 
+      border:1px solid $navy; /* チェックボックスの枠 */
+    }
+    &::after{
+      width: 10px;
+      height: 15px;
+      left: 3.5em;
+      border-right: 3px solid $navy; /* チェックマークの色 */
+      border-bottom: 3px solid $navy; /* チェックマークの色 */
+      opacity: 0;
+      transform: rotate(45deg);
+    }
+  }
+  .checkbox:checked + .mwform-checkbox-field-text::after{//checkedの直後の兄弟
+    opacity: 1;
+  }
+}
+.text--yellow{
+  color: $yellow;
+  text-decoration: underline $yellow;
+}
+input, textarea{
+  display: block;
+  width: 100%;
+  padding: 10px 0 11px 19px;
+  border: 1px solid $navy;
+}
+textarea{
+  padding: 17px 0 11px 22px;
+  margin-bottom: 1.6em;
+  height: 240px;
+}
+::placeholder{
+  color: $gray;
+  font-size: 12px;
+}
+.fwb{
+  font-weight: bold;
+}
+label{
+  display: inline-block;
+}
+.mw_wp_form p:last-of-type{
+  text-align: center;
+}
+.button--submit{
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: calc(27/16);
+  color: white;
+  padding: 0em 0 0 0;
+  background: $navy;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  margin-left: 3.2em;
+}
+
+/*----------------------------------------
+      タブレット向け
+----------------------------------------*/
+@media (max-width: 1024px) {
+  .contact__wrapper {
+    width: 85%;
+  }
+  .button--submit {
+    display: block;
+    margin: 0 auto;
+  }
+  .contact__checkboxLabel {
+    position: relative;
+    cursor: pointer;
+    width: 450px;
+
+  }
+  .contact__checkboxLabel::before {
+    left: 23%;
+  }
+  .contact__checkboxLabel::after {
+    left: 24%;
+  }
+}
+/*----------------------------------------
+スマホ向け
+----------------------------------------*/
+@media (max-width: 600px) {
+  .contactMV {
+    margin-top: 6em;
+  }
+  .contactMV__title {
+    width: 100%;
+    text-align: center;
+  }
+  input, textarea {
+    padding: 10px 0 10px 10px;
+  }
+  .contact__radioBtn {
+    transform: scale(2);
+  }
+  .contact__pribacy {
+    padding-left: 0em;
+  }
+  .contact__checkboxLabel {
+    width: 100%;
+    padding-left: 23%;
+  }
+  .contact .mwform-checkbox-field-text {
+    padding-left: 4em;
+  }
+  .contact .mwform-checkbox-field-text::before {
+    left: 1em;
+    top: 1%;
+  }
+  .contact .mwform-checkbox-field-text::after {
+    left: 1.4em;
+    top: 1%;
+  }
+}

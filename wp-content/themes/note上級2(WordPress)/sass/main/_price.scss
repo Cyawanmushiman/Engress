@@ -1,0 +1,396 @@
+.planMV{
+  background: url(../img/jpeg/plan@2x.jpg) center/cover;
+  position: relative;
+  padding: 11.1em 0;
+  &__title{
+    font-size: 3.2rem;
+    line-height: calc(54/32);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+/*----------------------------------------
+      planModel
+----------------------------------------*/
+.planModel{
+  padding: 4.8em 0 8.5em;
+  &__title{
+    font-size: 3.2rem;
+    line-height: calc(54/32);
+    font-weight: bold;
+    color: $navy;
+    text-align: center;
+    margin-bottom: 1.6em;
+  }
+  &__blocks{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4em;
+    position: relative;
+    &::before{
+      content: '';
+      display: inline-block;
+      background-color: $navy;
+      position: absolute;
+      top: 53%;
+      left: 49.3%;
+      transform: translate(-50%,-50%);
+      width: 2px;
+      height: 26px;
+    }
+    &::after{
+      content: '';
+      display: inline-block;
+      background-color: $navy;
+      position: absolute;
+      top: 53%;
+      left: 49.4%;
+      transform: translate(-50%,-50%);
+      width: 26px;
+      height: 2px;
+    }
+  }
+  %__block{
+    font-size: 2.2rem;
+    line-height: calc(35/22);
+    color: white;
+    font-weight: bold;
+    background-color: $navy;
+    width: 280px;
+    height: 90px;
+  }
+  &__admission{
+    @extend %__block;
+    // margin-right: 4.45em;
+    margin-left: 5.2em;
+    padding: 29px 0 0 59px;
+  }
+  &__monthMoney{
+    @extend %__block;
+    margin-right: 5.8em;
+    padding: 29px 0 0 96px;
+  }
+  &__text p{
+    font-size: 1.6rem;
+    line-height: calc(27/16);
+    color: $navy;
+  }
+}
+.planWrapper{
+  width: 70.3%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+/*----------------------------------------
+      planTable
+----------------------------------------*/
+.planTable{
+  padding: 0 0 0;
+  &__title{
+    font-size: 3.2rem;
+    line-height: calc(54/32);
+    color: $navy;
+    font-weight: bold;
+    margin-bottom: 1.8em;
+    text-align: center;
+  }
+  .scrollWrapper{
+    padding-top: 4em;
+  }
+}
+.planDatas{
+  display: flex;
+  justify-content: space-between;
+  &__blocks{
+    width: 24.4%;
+    text-align: center;
+    position: relative;
+  }
+  %__title{
+    font-size: 1.6rem;
+    line-height: calc(35/16);
+    color: white;
+    font-weight: bold;
+  }
+  &__title{
+    @extend %__title;
+    background: $navy;
+    padding: 11px 0 13px;
+    &--basic{
+      @extend %__title;
+      background: $navy;
+      padding: 7px 0 17px 5px;
+    }
+    &--recommend{
+      @extend %__title;
+      background: #f5a623;
+      padding: 10px 0 16px 0px;
+      position: absolute;
+      top: -7.5%;
+      left: 0%;
+      z-index: 2;
+      width: 100%;   
+    }
+  }
+  &__texts{
+    border: 1px solid $navy;
+  }
+  %__price{
+    font-size: 2.5rem;
+    line-height: calc(40/25);
+    font-weight: bold;
+  }
+  &__price{
+    @extend %__price;
+    color: $navy;
+    margin: 0.95em 0 0;
+    &--recommend{
+      @extend %__price;
+      color: $yellow;
+      margin-top: 3.3em;
+    }
+  }
+}
+%planDatas__text{
+  font-size: 1.6rem;
+  line-height: calc(27/16);
+  color: $navy;
+  position: relative;
+}
+.basic{
+  &--monthry{
+    @extend %planDatas__text;
+    margin: 0 0 2.5em 0;
+  }
+  &--curriculum{
+    @extend %planDatas__text;
+    margin: 0 0 0.8em 1.7em;
+    @include checkIcon;
+  }
+  &--support{
+    @extend %planDatas__text;
+    margin: 0 0 0.69em 1.7em;
+    @include checkIcon($left:-2%);
+  }
+  &--video{
+    @extend %planDatas__text;
+    margin: 0 0 11.1em 1.7em;
+    @include checkIcon($left:-2%);
+  }
+}
+.exercise{
+  &--monthry{
+    @extend %planDatas__text;
+    margin: 0 0 2.7em 0;
+  }
+  &--curriculum{
+    @extend %planDatas__text;
+    margin: 0 0 0.6em 1.7em;
+    @include checkIcon($left:2%);
+  }
+  &--support{
+    @extend %planDatas__text;
+    margin: 0 0 0.51em 1.7em;
+    @include checkIcon($left:-2%);
+  }
+  &--video{
+    @extend %planDatas__text;
+    margin: 0 0 0.65em 1.7em;
+    @include checkIcon($left:-2%);
+  }
+  &--test{
+    @extend %planDatas__text;
+    margin: 0 1em 7.25em 2.6em;
+    @include checkIcon($top:15%,$left:-11%);
+  }
+}
+.recommend{
+  &--monthry{
+    @extend %planDatas__text;
+    margin: 0 0 2.6em 0;
+  }
+  &--curriculum{
+    @extend %planDatas__text;
+    margin: 0 0 0.49em 1.7em;
+    @include checkIcon($left:2%);
+  }
+  &--support{
+    @extend %planDatas__text;
+    margin: 0 0 0.49em 1.7em;
+    @include checkIcon($left:-2%);
+  }
+  &--video{
+    @extend %planDatas__text;
+    margin: 0 0 0.5em 1.7em;
+    @include checkIcon($left:-2%);
+  }
+  &--test{
+    @extend %planDatas__text;
+    margin: 0 1em 0.5em 2.7em;
+    @include checkIcon($top:15%,$left:-11%);
+  }
+  &--english{
+    @extend %planDatas__text;
+    margin: 0 0 5.45em 1.7em;
+    @include checkIcon($top:30%,$left:-2.5%);
+  }
+}
+.flex{
+  &--monthry{
+    @extend %planDatas__text;
+    margin: 0 0 2.3em 0;
+  }
+  &--other{
+    @extend %planDatas__text;
+    margin: 0 0 16.15em 0em;
+  }
+}
+
+/*----------------------------------------
+      planCTA
+----------------------------------------*/
+.planCTA{
+  margin-top: 6.2em;
+}
+
+/*----------------------------------------
+      タブレット向け
+----------------------------------------*/
+@media (max-width: 1024px) {
+  .planWrapper {
+    width: 90%;
+  }
+  .planDatas {
+    justify-content: space-evenly;
+  }
+  .planDatas__blocks {
+    width: 168.6px;
+  }
+  .planModel__title {
+    margin-bottom: 1em;
+  }
+  .planModel__blocks {
+      width: 650px;
+      margin: 0 auto 3em;
+  }
+  .planModel__admission {
+    margin-left: 0em;
+  }
+  .planModel__monthMoney {
+    margin-right: 0em;
+  }
+  .planModel__blocks::before, .planModel__blocks::after {
+    left: 49.7%;
+  }
+  .basic--monthry, .basic--curriculum, .basic--support, .basic--video, .exercise--monthry, .exercise--curriculum, .exercise--support, .exercise--video, .exercise--test, .recommend--monthry, .recommend--curriculum, .recommend--support, .recommend--video, .recommend--test, .recommend--english, .flex--monthry, .flex--other {
+    font-size: 12px;
+  }
+  .basic--curriculum::before {
+    top: 25%;
+    left: 0%;
+  }
+  .basic--support::before {
+    top: 25%;
+    left: -7%;
+  }
+  .basic--video::before {
+    top: 25%;
+    left: -7%;
+  }
+  .exercise--curriculum::before {
+    top: 25%;
+    left: 0%;
+  }
+  .exercise--support::before {
+    top: 25%;
+    left: -7%;
+  }
+  .exercise--video::before {
+    top: 25%;
+    left: -7%;
+  }
+  .exercise--test::before {
+    top: 11%;
+    left: -18%;
+  }
+  .planDatas__title--recommend {
+    // top: -8.7%;
+    top: -9.3%;
+  }
+  .recommend--curriculum::before {
+    top: 25%;
+    left: 0%;
+  }
+  .recommend--support::before {
+    top: 25%;
+    left: -7%;
+  }
+  .recommend--video::before {
+    top: 25%;
+    left: -7%;
+  }
+  .recommend--test::before {
+    top: 11%;
+    left: -18%;
+  }
+  .recommend--english::before {
+    top: 24%;
+    left: -4.5%;
+  }
+
+}
+/*----------------------------------------
+スマホ向け
+----------------------------------------*/
+@media (max-width: 600px) {
+  .planMV {
+    margin-top: 6em;
+  }
+  .planModel__blocks {
+    width: 100%;
+  }
+  .planModel .planModel__admission, .planModel .planModel__monthMoney {
+    font-size: 1.8rem;
+    width: 40%;
+    height: 70px;
+    padding: 24px 0 0 0;
+    text-align: center;
+  }
+  .planModel__admission {
+    padding: 24px 0 0 12px;
+  }
+  .planModel__monthMoney {
+    padding: 24px 0 0 38px;
+  }
+  .planTable__title {
+    margin-bottom: 1em;
+  }
+  .scrollWrapper {
+    overflow-x: scroll;
+    padding-top: 4em;
+  }
+  .planDatas {
+    justify-content: space-between;
+  }
+  .planDatas__blocks {
+    flex: 0 0 168.6px;
+    margin-right: 1em;
+  }
+  .planDatas__title--recommend {
+    top: -7.3%;
+  }
+  .planDatas__price--recommend {
+    margin-top: 3.55em;
+  }
+  .exercise--test {
+    margin: 0 1em 7.2em 2.6em;
+  }
+  .recommend--english {
+    margin: 0 0 5.5em 1.7em;
+  }
+}

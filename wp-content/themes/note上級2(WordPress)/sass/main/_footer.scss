@@ -1,0 +1,153 @@
+.footer{
+  background: $navy;
+  padding-bottom: 6.5em;
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 73.8%;
+    max-width: 1024px;
+  }
+  &__nav{
+    width: 60%;
+    padding-left: 2.8em;
+    padding-top: 1.7em;
+  }
+  .menu{
+    display: flex;
+  }
+  %menuItem__before{
+    content: '';
+    position: absolute;
+    top: 6%;
+    width: 1px;
+    height: 24px;
+    background-color: #f8f8f8;
+  }
+  .menu-item{
+    margin-right: 4.75em;
+    margin-left: 0;
+    position: relative;
+    &::before{
+      @extend %menuItem__before;
+      left: 144%;
+    }
+    &:nth-of-type(2)::before{
+      @extend %menuItem__before;
+      left: 132%;
+    }
+    &:last-of-type::before{
+      display: none;
+    }
+    a{
+      font-size: 1.6rem;
+      line-height: calc(27/16);
+      color: white;
+      font-weight: bold;
+      transition: all 0.2s;
+      &:hover{
+        color: $yellow;
+      }
+    }
+  }
+  // &__nav-link{
+  //   font-size: 1.6rem;
+  //   line-height: calc(27/16);
+  //   color: white;
+  //   font-weight: bold;
+  // }
+  &__right{
+    width: 40%;
+    text-align: right;
+    padding-right: 0.5em;
+    padding-top: 3.5em;
+  }
+  &__logo{
+    width: 197px;
+    height: 58px;
+    background: white;
+    display: block;
+    padding: 14px 20px 0px;
+    display: inline-block;
+    margin-bottom: 2.2em;
+  }
+  &__tel{
+    font-size: 1.6rem;
+    line-height: calc(27/16);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+  }
+  &__telIcon{
+    @extend .telIcon;
+    display: inline-block;
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
+  &__hour{
+    font-size: 12px;
+    line-height: calc(20/12);
+    color: white;
+  }
+}
+.copyright{
+  text-align: center;
+  &__text{
+    font-size: 12px;
+    line-height: calc(20/12);
+    color: $navy;
+  }
+}
+/*----------------------------------------
+      タブレット向け
+----------------------------------------*/
+@media (max-width: 1024px) {
+  .footer__wrapper {
+    width: 95%;
+  }
+  .footer__nav {
+    width: 80%;
+  }
+}
+/*----------------------------------------
+スマホ向け
+----------------------------------------*/
+@media (max-width: 600px) {
+  .footer__nav {
+    width: 45%;
+  }
+  .footer .menu {
+    flex-direction: column;
+  }
+  .footer .menu-item {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+  .footer .menu-item::before {
+    display: none;
+  }
+  .footer .nav-link {
+    font-size: 1.9rem;
+  }
+  .footer__logo {
+    width: 100%;
+    height: 45px;
+    padding: 11px 10px 0px;
+    margin-bottom: 1em;
+  }
+  .footer__tel {
+    font-size: 2rem;
+    line-height: calc(27/16);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+  }
+  .footer__telIcon {
+    margin-right: 0.1em;
+    vertical-align: text-bottom;
+    width: 15px;
+  }
+  .footer__hour {
+    font-size: 1.6rem;
+  }
+}
